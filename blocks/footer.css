@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+}
+
+.footer__text {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  color: rgba(33, 33, 33, 0.7);
+}
