@@ -104,6 +104,8 @@
 .profile__add-button__text {
   margin: auto auto auto 0;
   padding-left: 4px;
+  font-size: 16px;
+  line-height: 1;
 }
 @media screen and (max-width: 1000px) {
   .profile {
