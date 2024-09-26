@@ -47,9 +47,6 @@
 .profile__pencil {
   padding-right: 8px;
 }
-.profile__edit-button__text {
-  margin: 0;
-}
 
 .profile__edit-button {
   margin-top: auto;
@@ -57,7 +54,7 @@
   border: 0;
   align-self: flex-start;
   color: rgba(33, 33, 33);
-  opacity: 40%;
+  opacity: 70%;
   font-size: 16px;
   line-height: 1;
   font-weight: 500;
@@ -67,7 +64,6 @@
 
 .profile__edit-button:hover {
   cursor: pointer;
-  color: rgba(33, 33, 33);
   opacity: 100%;
 }
 
@@ -86,12 +82,10 @@
   line-height: 1;
   font-weight: 500;
   opacity: 100%;
-  display: flex;
 }
 
 .profile__add-button:hover {
   cursor: pointer;
-  background-color: rgb(33, 33, 33);
   opacity: 80%;
 }
 .profile__plus {
@@ -101,12 +95,7 @@
   width: 12px;
   margin: auto 0 auto auto;
 }
-.profile__add-button__text {
-  margin: auto auto auto 0;
-  padding-left: 4px;
-  font-size: 16px;
-  line-height: 1;
-}
+
 @media screen and (max-width: 1000px) {
   .profile {
     flex-direction: column;

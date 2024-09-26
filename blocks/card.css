@@ -50,12 +50,11 @@
 
   .card__description {
     width: 288px;
-    padding: 0 0 20px;
+    padding: 0;
   }
 
   .card__title {
     font-size: 16px;
     line-height: 16px;
-    font-weight: 500;
   }
 }
