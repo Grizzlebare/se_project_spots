@@ -26,12 +26,41 @@ const initialCards = [
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-button");
+const profileName = document.querySelector(".profile__name");
+const profileDescription = document.querySelector(".profile__description");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
-
+const editFormElement = editProfileModal.querySelector(".modal__form");
 const closeModalButton = editProfileModal.querySelector(".modal__close-button");
 
+const editModalNameInput = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editModalDescriptionInput = editProfileModal.querySelector(
+  "#profile-description-input"
+);
+
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+
+  const cardNameEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardNameEl.textContent = data.name;
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+
+  return cardElement;
+}
+
 function openmodal() {
+  editModalNameInput.value = profileName.textContent;
+  editModalDescriptionInput.value = profileDescription.textContent;
   editProfileModal.classList.add("modal__opened");
 }
 
@@ -39,6 +68,20 @@ function closemodal() {
   editProfileModal.classList.remove("modal__opened");
 }
 
+function handleEditFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = editModalNameInput.value;
+  profileDescription.textContent = editModalDescriptionInput.value;
+  closemodal();
+}
+
 profileEditButton.addEventListener("click", openmodal);
 
 closeModalButton.addEventListener("click", closemodal);
+
+editFormElement.addEventListener("submit", handleEditFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
+}
