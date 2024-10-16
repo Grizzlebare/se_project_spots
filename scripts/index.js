@@ -58,26 +58,26 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function openmodal() {
+function openModal() {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal__opened");
+  editProfileModal.classList.add("modal_opened");
 }
 
-function closemodal() {
-  editProfileModal.classList.remove("modal__opened");
+function closeModal() {
+  editProfileModal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  closemodal();
+  closeModal();
 }
 
-profileEditButton.addEventListener("click", openmodal);
+profileEditButton.addEventListener("click", openModal);
 
-closeModalButton.addEventListener("click", closemodal);
+closeModalButton.addEventListener("click", closeModal);
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
