@@ -40,6 +40,7 @@
   opacity: 40%;
   margin: auto;
   padding: 0;
+  cursor: pointer;
 }
 .modal__title {
   margin: 0 0 32px;
@@ -84,6 +85,7 @@
   border-radius: 8px;
   box-shadow: none;
   border: 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {
