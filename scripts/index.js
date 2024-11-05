@@ -23,6 +23,10 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+  {
+    name: "Golden Gate bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -35,6 +39,11 @@ const cardFormElement = cardModal.querySelector(".modal__form");
 const cardModalClose = cardModal.querySelector(".modal__close-button");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
+
+const previewModal = document.querySelector("#preview-modal");
+const imagePreview = previewModal.querySelector(".modal__image");
+const imagePreviewCaption = previewModal.querySelector(".modal__caption");
+const imagePreviewClose = previewModal.querySelector(".modal__close-button");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editFormElement = editProfileModal.querySelector(".modal__form");
@@ -59,6 +68,7 @@ function getCardElement(data) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
@@ -69,6 +79,13 @@ function getCardElement(data) {
 
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    openModal(previewModal);
+    imagePreview.src = data.link;
+    imagePreviewCaption.textContent = data.name;
+    imagePreviewCaption.alt = data.name;
   });
 
   return cardElement;
@@ -113,6 +130,10 @@ cardModalButton.addEventListener("click", () => {
 
 cardModalClose.addEventListener("click", () => {
   closeModal(cardModal);
+});
+
+previewModal.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
