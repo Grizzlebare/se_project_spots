@@ -6,6 +6,7 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   visibility: hidden;
@@ -27,27 +28,35 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  margin: auto;
   border-radius: 8px;
+  margin: 204px 355px 203px;
+}
+.modal__form {
+  margin: 0;
+  padding: 0;
 }
 
 .modal__container-preview {
-  padding: 0;
   background: transparent;
+  padding: 81px 0 80px;
+  max-width: fit-content;
+  margin: auto;
 }
 
 .modal__image {
   width: 100%;
-  object-fit: cover;
-  max-width: 80vw;
-  max-height: 80vh;
+  object-fit: contain;
+  max-width: 90vw;
+  max-height: 82vh;
   border-radius: 8px;
   margin-bottom: 8px;
+  display: block;
 }
 
 .modal__caption {
   background-color: rgba(33, 33, 33, 1);
   display: inline;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   float: left;
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
@@ -56,6 +65,13 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
 }
 
 .modal__close-button {
@@ -82,7 +98,7 @@
 .modal__close_type_preview {
   background-image: url(../images/white-x-prieview.svg);
   opacity: 100%;
-  top: 0;
+  top: 80px;
   right: -52px;
 }
 
@@ -106,8 +122,8 @@
   margin-bottom: 32px;
   border-radius: 8px;
   border: 1px;
-  font-size: 20px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 17.6px;
   font-weight: 500;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   color: rgba(33, 33, 33, 0.7);
@@ -118,6 +134,7 @@
   border-radius: 8px;
   border: 1px solid rgba(33, 33, 33, 0.4);
   color: rgba(33, 33, 33, 1);
+  text-overflow: ellipsis;
 }
 
 .modal__input:hover {
@@ -153,10 +170,16 @@
   .modal__container {
     margin: auto;
     max-width: 288px;
+    padding: 0 12px 12px;
+  }
+  .modal__header {
+    padding: 0;
+    margin: 12px 0 24px;
   }
   .modal__title {
     font-size: 20px;
-    margin: 10px 0 34px;
+    margin: 0;
+    padding-top: 6px;
   }
   .modal__close-button {
     top: 12px;
@@ -172,6 +195,7 @@
   .modal__container-preview {
     margin: auto;
     position: relative;
+    padding: 0;
   }
 
   .modal__image {
