@@ -205,7 +205,7 @@
 
   .modal__close-button_type_preview {
     background-image: url(../images/white-x-prieview.svg);
-    right: 5px;
+    right: 0;
     top: -50px;
     opacity: 100%;
   }
