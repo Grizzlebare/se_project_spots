@@ -95,14 +95,14 @@
   opacity: 100%;
 }
 
-.modal__close_type_preview {
+.modal__close-type-preview {
   background-image: url(../images/white-x-prieview.svg);
   opacity: 100%;
   top: 80px;
   right: -52px;
 }
 
-.modal__close_type_preview:hover {
+.modal__close-type-preview:hover {
   opacity: 40%;
 }
 
@@ -203,14 +203,14 @@
     object-fit: contain;
   }
 
-  .modal__close_type_preview {
+  .modal__close-type-preview {
     background-image: url(../images/white-x-prieview.svg);
     right: 5px;
     top: -50px;
     opacity: 100%;
   }
 
-  .modal__close_type_preview:hover {
+  .modal__close-type-preview:hover {
     opacity: 40%;
   }
 }
