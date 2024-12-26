@@ -137,6 +137,14 @@
   text-overflow: ellipsis;
 }
 
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.7);
+}
+
+.modal__error {
+  color: rgba(255, 0, 0, 0.7);
+}
+
 .modal__input:hover {
   border: 1px solid rgba(33, 33, 33, 1);
   cursor: pointer;
@@ -156,6 +164,11 @@
   box-shadow: none;
   border: 0;
   cursor: pointer;
+}
+
+.modal__submit-button_disabled {
+  background-color: rgba(33, 33, 33, 1);
+  cursor: not-allowed;
 }
 
 .modal__submit-button:hover {
