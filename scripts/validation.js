@@ -1,3 +1,12 @@
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
 const showInputError = (formEl, inputEl, errorMsg) => {
   const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
@@ -41,31 +50,32 @@ const disableButton = (buttonEl) => {
   buttonEl.classList.add("modal__submit-button_disabled");
 };
 
-// const resetValidation = (formEl, inputList) => {
-//   inputList.forEach((inputEl) => {
-//     hideInputError(formEl, inputEl);
-//   });
-// };
-
-const setEventListeners = (formEl) => {
-  const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
-  const buttonEl = formEl.querySelector(".modal__submit-button");
-
-  toggleButtonState(inputList, buttonEl);
-
+// optional: reset validation
+const resetValidation = (formEl, inputList) => {
   inputList.forEach((inputEl) => {
+    hideInputError(formEl, inputEl);
+  });
+};
+
+const setEventListeners = (formEl, config) => {
+  const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, buttonElement, config);
+
+  inputList.forEach((inputElement) => {
     inputEl.addEventListener("input", function () {
-      checkInputValidity(formEl, inputEl);
-      toggleButtonState(inputList, buttonEl);
+      checkInputValidity(formEl, inputElement, config);
+      toggleButtonState(inputList, buttonElement, config);
     });
   });
 };
 
-const enableValidation = () => {
-  const formList = document.querySelectorAll(".modal__form");
+const enableValidation = (config) => {
+  const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
     setEventListeners(formEl);
   });
 };
 
-enableValidation();
+enableValidation(settings);
