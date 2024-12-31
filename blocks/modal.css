@@ -29,7 +29,7 @@
   width: 100%;
   box-sizing: border-box;
   border-radius: 8px;
-  margin: 204px 355px 203px;
+  margin: 204px auto 203px;
 }
 .modal__form {
   margin: 0;
@@ -167,7 +167,7 @@
 }
 
 .modal__submit-button_disabled {
-  background-color: rgba(33, 33, 33, 1);
+  background-color: rgba(33, 33, 33, 0.5);
   cursor: not-allowed;
 }
 
