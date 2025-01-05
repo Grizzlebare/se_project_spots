@@ -98,12 +98,12 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscKeyPress(modal));
+  document.addEventListener("keydown", handleEscKeyPress);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscKeyPress(modal));
+  document.removeEventListener("keydown", handleEscKeyPress);
 }
 
 function handleEditFormSubmit(evt) {
@@ -113,14 +113,14 @@ function handleEditFormSubmit(evt) {
   closeModal(editProfileModal);
 }
 
-// COME BACK TO THIS
+// COME BACK TO THIS ***
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   cardFormElement.reset();
-  // disableButton(cardModalButton, settings);
+  disableButton(cardSubmitButton, settings);
   closeModal(cardModal);
 }
 
