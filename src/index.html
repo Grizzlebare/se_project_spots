@@ -12,12 +12,16 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Logo.svg" alt="spot logo" class="header__logo" />
+        <img
+          src="<%=require('./images/Logo.svg')%>"
+          alt="spot logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%=require('./images/avatar.jpg')%>"
             alt="profile avatar"
             class="profile__avatar"
           />
@@ -26,7 +30,7 @@
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-button">
               <img
-                src="./images/pencil.svg"
+                src="<%=require('./images/pencil.svg')%>"
                 class="profile__pencil"
                 alt="pencil icon"
               />Edit Profile
@@ -34,7 +38,7 @@
           </div>
           <button type="button" class="profile__add-button">
             <img
-              src="./images/plus.svg"
+              src="<%=require('./images/plus.svg')%>"
               class="profile__plus"
               alt="plus icon"
             />New Post
