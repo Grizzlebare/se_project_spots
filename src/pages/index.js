@@ -5,6 +5,8 @@ import {
   resetValidation,
   disableButton,
 } from "../scripts/validation.js";
+import Api from "../utils/API.js";
+import { setButtonText, setDeleteButtonText } from "../utils/helpers.js";
 
 const initialCards = [
   {
