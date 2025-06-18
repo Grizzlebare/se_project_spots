@@ -87,7 +87,7 @@ const avatarLinkInput = avatarModal.querySelector("#profile-avatar-input");
 
 //delete form elements
 const deleteModal = document.querySelector("#delete-modal");
-const deleteForm = deleteModal.querySelector(".modal__form");
+const deleteForm = deleteModal.querySelector(".modal__form-delete");
 const deleteSubmitButton = deleteModal.querySelector(".modal__delete-button");
 const cancelButton = document.querySelector(".modal__cancel-button");
 
@@ -274,25 +274,10 @@ avatarModalButton.addEventListener("click", () => {
   openModal(avatarModal);
 });
 
-deleteSubmitButton.addEventListener("click", () => {
-  handleDeleteSubmit(deleteModal);
-});
-
 cancelButton.addEventListener("click", () => {
   closeModal(deleteModal);
 });
-// profileCloseButton.addEventListener("click", () => {
-//   closeModal(editProfileModal);
-// });
 
-// cardModalClose.addEventListener("click", () => {
-//   closeModal(cardModal);
-// });
-
-// imagePreviewClose.addEventListener("click", () => {
-//   closeModal(previewModal);
-// });
-//this is for ^^^
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
     if (
@@ -304,14 +289,6 @@ modals.forEach((modal) => {
   });
 });
 
-// function handleEscapeKey(evt) {
-//   if (evt.key === "Escape") {
-//     const modals = document.querySelectorAll(".modal_opened");
-//     modals.forEach((modal) => {
-//       closeModal(modal);
-//     });
-//   }
-// }
 function handleEscKeyPress(evt) {
   console.log("Key pressed:", evt.key);
   if (evt.key === "Escape") {
@@ -325,12 +302,6 @@ function handleEscKeyPress(evt) {
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardFormElement.addEventListener("submit", handleAddCardFormSubmit);
-
-//initialCards.forEach((item) => {
-//  const cardElement = getCardElement(item);
-//  cardsList.append(cardElement);
-//});
-//^^interaction with **  avatarFormElement.addEventListener("submit", handleAvatarSubmit);  **
 avatarFormElement.addEventListener("submit", handleAvatarSubmit);
 deleteForm.addEventListener("submit", handleDeleteSubmit);
 enableValidation(settings);
